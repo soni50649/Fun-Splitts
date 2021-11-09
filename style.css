@@ -3,3 +3,9 @@
 .full{width:100vw;height:100vh;}
 .quarter{width:50%;height:50%;background-color:blue;border:1px solid white}
 .flexy{display:flex;flex-wrap:wrap}
+#volume{
+    position:absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
