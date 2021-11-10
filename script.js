@@ -12,7 +12,10 @@ function split2(e){
     addQuarter(this)
     addQuarter(this)
     }
-    volume-=0.01
+    volume-=0.1// turns volume down 10% each time it is clicked
+    if(volume<0){
+        volume=0
+    }
     audio.volume=volume
      
     e.stopPropagation()
@@ -35,7 +38,7 @@ function addQuarter(intoDiv){
 
 document.body.addEventListener("click",split2)
 
-let volume=1
+let volume=0.5
 let audio = document.createElement("AUDIO")
 document.body.appendChild(audio);
 audio.src = "Sounds/sam.mp3"
@@ -44,10 +47,14 @@ document.body.addEventListener("mousemove", function () {
 audio.play()
 })
   
-document.getElementById("sound").play()
+
 
 function getLouder(){
-    volume+=0.01 
+    volume+=0.005 // increases volume by.5%
+    document.getElementById("volume").innerHTML= Math.floor(volume*100)
 }
 
-setInterval(getLouder,100)
+setInterval(getLouder,100) // calls get louder 10* per second(every 100 milliseconds)
+   // setInterval(timer,1000) timer+=1
+
+
