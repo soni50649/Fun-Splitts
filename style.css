@@ -25,3 +25,11 @@ h1{
     background-color: black;
     padding: 5px;
 }
+
+#best-time{
+background-color: brown;
+position: absolute;
+right: 50%;
+border: 15px;
+padding: 5px;
+}
