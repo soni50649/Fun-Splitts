@@ -12,7 +12,7 @@ function split2(e){
     addQuarter(this)
     addQuarter(this)
     }
-    volume-=0.1// turns volume down 10% each time it is clicked
+    volume-=0.02// turns volume down 2% each time it is clicked
     if(volume<0){
         volume=0
     }
@@ -38,6 +38,7 @@ function addQuarter(intoDiv){
 
 document.body.addEventListener("click",split2)
 
+let timer=0
 let volume=0.5
 let audio = document.createElement("AUDIO")
 document.body.appendChild(audio);
@@ -57,4 +58,11 @@ function getLouder(){
 setInterval(getLouder,100) // calls get louder 10* per second(every 100 milliseconds)
    // setInterval(timer,1000) timer+=1
 
+document.getElementById("timer").onclick= function(){
+    butWork()}
 
+function timeUp(){
+    timer+=1
+    document.getElementById("timer").innerHTML= timer
+}
+setInterval(timeUp,1000)
